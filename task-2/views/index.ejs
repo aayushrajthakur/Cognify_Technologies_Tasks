@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<body style="font-family: Arial; margin: 20px;">
+    <h1 style="color: darkblue;">Welcome to the HomePage</h1> 
+    <h2>User Details</h2>
+    <form action="/submit" method="post" onsubmit="return validateForm()" style="border:1px solid #ccc; padding:20px; width:300px;">
+        <label for="name">Name: <br>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 5px;"><br><br>
+        </label>
+        <label for="email">Email: <br>
+            <input type="email" id="email" name="email" required><br><br>
+        </label>
+        <label for="age">Age: <br>
+            <input type="number" id="age" name="age" required style="width: 100%; padding: 5px;"><br><br>
+        </label>
+        <label for="password">Password: <br>
+            <input type="password" id="password" name="password" required style="width: 100%; padding: 5px;"><br><br>
+        </label>
+        <button type="submit" style="background-color: darkblue; color: white; padding:10px; border:none; margin-left: 40%;">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const age = document.getElementById('age').value;
+            const password = document.getElementById('password').value;
+
+            if(age < 18){
+                alert('Age must be at least 18');
+                return false;
+            }
+
+            if(password.length < 6){
+                alert('Password must be at least 6 characters long');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
