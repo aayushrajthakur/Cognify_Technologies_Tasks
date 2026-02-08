@@ -17,7 +17,7 @@ let db;
   db = await mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'Cliffard06.#',
+    password: '#########',  //changes as per your mysql password
     database: 'task'
   });
 })();

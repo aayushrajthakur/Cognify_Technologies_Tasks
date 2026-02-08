@@ -4,18 +4,14 @@ const path = require('path');
 
 const app = express();
 
-// Middleware
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 let submissions = [];
-let nextId = 0; // ensure unique IDs
-
-// --------------------
-// EJS Routes
-// --------------------
+let nextId = 0; 
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -39,11 +35,7 @@ app.post('/submit', (req, res) => {
     res.render('result', submission);
 });
 
-// --------------------
-// RESTful API Routes
-// --------------------
 
-// CREATE
 app.post('/api/submit', (req, res) => {
     const { name, email, age, password } = req.body;
 
